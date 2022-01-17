@@ -7,6 +7,64 @@
 <body>
 <h1>Contact us page</h1>
 <a href="index.html">Home</a>
-
+<form action="#">
+    <fieldset>
+        <legend>Fill this form</legend>
+        <div>
+            <label for="fullName"><b>Full Name</b></label>
+            <input type="text" name="fullName" id="fullName" required>
+        </div>
+        <br>
+        <div>
+            <label for="phoneNumber"><b>Phone Number</b></label>
+            <input type="tel" name="phoneNumber" id="phoneNumber" required>
+        </div>
+        <br>
+        <div>
+            <label for="email"><b>Email</b></label>
+            <input type="email" name="email" id="email" required>
+        </div>
+        <br>
+        <div>
+            <label><b>Gender</b></label>
+            <label>Male</label>
+            <input type="radio" name="gender" id="female" value="Female" required>
+            <label>Female</label>
+            <input type="radio" name="gender" id="male" value="Male" required>
+        </div>
+        <br>
+        <div>
+            <label for=""><b>Date of Birth</b></label>
+            <input type="date">
+        </div>
+        <br>
+        <div>
+            <label for=""><b>Preferred Method Of Contact</b></label>
+            <label for="">Email</label>
+            <input type="checkbox" name="preferredContactMethod" value="email" required>
+            <label for="">Phone</label>
+            <input type="checkbox" name="preferredContactMethod" value="phone" required>
+        </div>
+        <br>
+        <div>
+            <label for=""><b>How do you rate our website ?</b></label>
+            <select name="rating" id="" required>
+                <option value="4">Excellent</option>
+                <option value="3">Very Good</option>
+                <option value="2">Good</option>
+                <option value="1">Poor</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <label for=""><b>Message</b></label><br>
+            <textarea rows="10" cols="40"></textarea>
+        </div>
+        <div>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+    </fieldset>
+</form>
 </body>
 </html>
