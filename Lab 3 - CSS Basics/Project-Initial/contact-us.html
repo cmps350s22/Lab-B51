@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles/contact-us.css">
+</head>
+<body>
+<header>
+    <h1 class="header_text">Contact Us</h1>
+    <p>We will do out best to get back to you as soon as we can</p>
+</header>
+<form action="" class="form-area">
+    <fieldset>
+        <legend>Fill this form</legend>
+        <label for="fullName"><b>Full Name </b></label> <input id="fullName" type="text" maxlength="50"
+                                                               placeholder="enter your full name" required><br><br>
+        <label for="phoneNumber"><b>Phone Number</b></label> <input id="phoneNumber" type="tel" maxlength="50"
+                                                                    placeholder="+974-###-##-###"><br><br>
+        <label for="email"><b>Email</b></label> <input id="email" type="email" placeholder="your-email@example.com"><br><br>
+        <div class="gender">
+            <label for="male"><b>Gender:</b></label> &nbsp;&nbsp;
+            <label for="male">Male</label> <input id="male" name="gender" type="radio" checked required>
+            <label for="female">Female</label> <input id="female" name="gender" type="radio"><br><br>
+        </div>
+        <br>
+        <label for="dob"><b>Date Of Birth</b> <input type="date" id="dob"></label>
+        <br>
+        <div class="contact_method">
+            <label><b>Preferred Method of Contact: &nbsp;</b></label>
+            <label for="phone-pref">Phone</label><input id="phone-pref" type="checkbox" required>
+            <label for="email-pref">Email</label><input id="email-pref" type="checkbox" required><br><br>
+        </div>
+        <br>
+        <label><b>How do you rate our website?</b> </label>
+        <select name="rating" required >
+            <option value="4">Excellent</option>
+            <option value="3" selected>Very Good</option>
+            <option value="3">Good</option>
+            <option value="1">Poor</option>
+        </select><br><br>
+        <label for="message"><b>Message</b></label> <br><textarea id="message" rows="10" cols="40"
+                                                                  placeholder="Leave your message"
+                                                                  required></textarea><br>
+        <br>
+        <div class="form_buttons">
+            <input type="submit" class="button">
+            <input type="reset" class="button">
+        </div>
+    </fieldset>
+
+
+</form>
+</body>
+</html>

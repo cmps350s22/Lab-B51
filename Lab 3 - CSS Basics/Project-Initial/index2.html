@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .paragraph{
+            background-color: red;
+            margin: 10px;
+            padding: 10px;
+            width: 400px;
+        }
+        .p1{
+            background-color: blue;
+            order: 3;
+            /*flex: 0.2;*/
+        }
+        .p2{
+            background-color: red;
+            /*flex: 0.8;*/
+        }
+        .p3{
+            /*flex: 0.2;*/
+            background-color: #b5b552;
+            order: -1;
+            /*align-self: flex-start;*/
+        }
+        .p4{
+            /*flex: 0.2;*/
+            background-color: #d3d3a4;
+            order: -1;
+            /*align-self: flex-start;*/
+        }
+        .p5{
+            /*flex: 0.2;*/
+            background-color: #acac85;
+            order: -1;
+            /*align-self: flex-start;*/
+        }
+        .p6{
+            /*flex: 0.2;*/
+            background-color: #212112;
+            order: -1;
+            /*align-self: flex-start;*/
+        }
+        div.container{
+            border-style: solid;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 800px) {
+            body{
+                font-size: smaller;
+            }
+            div.container{
+                flex-direction: column;
+            }
+            .paragraph{
+                flex-basis: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <p class="paragraph p1"><b>P1</b>- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, nobis!</p>
+    <p class="paragraph p2"><b>P2</b> - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, nobis!</p>
+    <p class="paragraph p3"><b>P3</b> -Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, nobis!</p>
+    <p class="paragraph p4"><b>P4</b> -Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, nobis!</p>
+    <p class="paragraph p5"><b>P5</b> -Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, nobis!</p>
+    <p class="paragraph p6"><b>P6</b> -Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, nobis!</p>
+</div>
+</body>
+</html>
