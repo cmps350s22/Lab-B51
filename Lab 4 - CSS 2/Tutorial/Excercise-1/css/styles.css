@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*border: red 1px solid;*/
+    /*margin: 10px;*/
+}
+
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: .2fr .3fr .7fr .1fr;
+    grid-template-areas:
+        "header"
+        "main"
+        "nav"
+        "footer";
+}
+
+span {
+    color: red;
+}
+
+header {
+    display: grid;
+    place-items: center;
+    text-transform: uppercase;
+    min-height: 4rem;
+    grid-area: header;
+}
+
+nav {
+    background-color: orange;
+}
+
+ul {
+    display: grid;
+    height: 100%;
+}
+
+nav li {
+    list-style: none;
+    text-align: center;
+    padding: 10px;
+}
+
+nav li:hover {
+    cursor: pointer;
+    background-color: brown;
+
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    grid-area: nav;
+}
+
+main {
+    background: url("../img/bg.jpg") center;
+    background-size: cover;
+    color: white;
+    display: grid;
+    place-items: center;
+    grid-area: main;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+.btn-buy {
+    margin-bottom: 2rem;
+    padding: 20px;
+    background-color: orange;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    border-radius: 25px;
+}
+
+.title {
+    margin-top: 2rem;
+}
+
+footer {
+    background-color: brown;
+    grid-area: footer;
+}
+
+@media screen and (min-width: 60rem) {
+    body {
+        width: 90%;
+        margin: auto;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: .2fr .8fr;
+        grid-template-rows: .2fr .7fr .1fr;
+        grid-template-areas:
+        "header main"
+        "nav main"
+        "footer footer";
+    }
+
+    /*main{*/
+    /*    grid-column: 2/3;*/
+    /*    grid-row: 1/3;*/
+    /*}*/
+    /*nav{*/
+    /*    grid-column: 1/2;*/
+    /*}*/
+    /*footer{*/
+    /*    grid-column: 1/3;*/
+    /*}*/
+
+}
