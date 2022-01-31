@@ -93,13 +93,13 @@ footer {
 
 @media screen and (min-width: 60rem) {
     body {
-        width: 90%;
+        width: 100%;
         margin: auto;
     }
 
     .container {
-        display: grid;
-        grid-template-columns: .2fr .8fr;
+        /*background-color: red;*/
+        grid-template-columns: .2fr auto;
         grid-template-rows: .2fr .7fr .1fr;
         grid-template-areas:
         "header main"
