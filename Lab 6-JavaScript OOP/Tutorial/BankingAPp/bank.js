@@ -1,5 +1,3 @@
-import {CurrentAccount} from "./current-account";
-
 class Bank {
     constructor(account) {
         this.accounts = account
@@ -10,13 +8,20 @@ class Bank {
     }
 
     avgBalance() {
-        return this.accounts.reduce((acc, curr)=> acc + curr.balance, 0)/accounts.length
+        return this.sumBalance() / this.accounts.length
+    }
+
+    sumBalance() {
+        return this.accounts.reduce((acc, curr) => acc + curr.balance, 0)
+    }
+
+    toJSON() {
+        return JSON.stringify(this.accounts)
+    }
+
+    fromJson(accountJSON) {
+        return JSON.parse(accountJSON)
     }
 }
 
-const accounts = [new CurrentAccount(1000),new CurrentAccount(200),new CurrentAccount(200) ]
-let acc = 0
 
-for (const curr of accounts) {
-    acc+= curr.balance
-}
