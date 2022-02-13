@@ -1,0 +1,12 @@
+{
+  "name": "banking",
+  "version": "1.0.0",
+  "description": "Banking System For Qatar",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abdulahi",
+  "license": "ISC",
+  "type": "module"
+}
