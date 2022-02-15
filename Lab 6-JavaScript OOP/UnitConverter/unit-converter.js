@@ -5,7 +5,7 @@ class UnitMap {
         this.multiplier = multiplier;
     }
 }
-class UnitConverter {
+export class UnitConverter {
     constructor() {
         this.unitMaps = [
             new UnitMap('g', 'ounce', 28.3495231),
@@ -44,13 +44,3 @@ class UnitConverter {
     }
 }
 
-module.exports = new UnitConverter();
-
-const unitConverter = new UnitConverter();
-/*
-console.log( '1 Kg is', unitConverter.kgToOunce(1), 'ounce' );
-console.log( '2 Kg is', unitConverter.kgToPound(2), 'poud');
-
-console.log( '1 m is', unitConverter.meterToInch(1), 'inch' );
-console.log( '2 m is', unitConverter.meterToFoot(2), 'foot');
-*/
