@@ -44,3 +44,13 @@ export class UnitConverter {
     }
 }
 
+// const unitConverter = new UnitConverter()
+
+// if(unitConverter.kgToPound(1) == 2.2046)
+//     console.log('It is successfully converting from kg to pound')
+// else
+//     console.log('Issue')
+
+
+// 1kg = 2.2046226218 lbs
+// 1m to inch 39.3701

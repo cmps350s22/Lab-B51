@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Country Explorer</h1>
+    </header>
+    <hr>
+    <br>
+    <main>
+        <form action="#">
+            <div class="form-group">
+                <lebel>Select a region &nbsp;</lebel>
+                <input type="text" id="region" name="region" placeholder="Select a region" list="regions"
+                       onchange="getCountries(this.value)">
+                <datalist id="regions" name="regions">
+                    <option value="Africa"></option>
+                    <option value="Asia"></option>
+                    <option value="Europe"></option>
+                    <option value="North America"></option>
+                    <option value="South America"></option>
+                </datalist>
+            </div>
+            <div class="form-group">
+                <lebel>Select a country</lebel>
+                <select name="country" id="country" onchange="loadCountryDetails(this.value)">
+                </select>
+            </div>
+        </form>
+        <br>
+        <div id="facts-area">
+            <!-- Load the facts' table here-->
+        </div>
+    </main>
+</div>
+
+<script src="js/index.js"></script>
+</body>
+</html>

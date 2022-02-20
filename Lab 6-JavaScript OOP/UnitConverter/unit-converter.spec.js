@@ -4,25 +4,26 @@ import {expect} from "chai";
 import {UnitConverter} from "./unit-converter.js";
 
 const unitConverter = new UnitConverter()
+//add(1 , 1)  = 2
+describe("UnitConverter Testing Methods", () => {
 
-describe('Unit Converter Class Test Cases', () => {
-    describe('Test Cases For Height' , ()=>{
-        it('1 kgToOunce should return 35.274', function () {
+    describe('Weight Methods', () => {
+        it("1 KG should be 2.0254 Pound", () => {
+            expect(unitConverter.kgToPound(1)).equals(2.2046)
+        })
+
+        it("1 KG should be 2.0254 Ounce", () => {
             expect(unitConverter.kgToOunce(1)).equals(35.274)
-        });
-        it('1 kgToOunce should return 35.274', function () {
-            expect(unitConverter.kgToOunce(1)).equals(35.274)
-        });
+        })
     })
 
-    describe('Test Cases For Weight' , ()=>{
-        it('1 kgToOunce should return 35.274', function () {
-            expect(unitConverter.kgToOunce(1)).equals(35.274)
-        });
-        it('1 kgToOunce should return 35.274', function () {
-            expect(unitConverter.kgToOunce(1)).equals(35.274)
-        });
+    describe('Length Methods', () => {
+        it("1 meterToInch should be 2.0254 meter", () => {
+            expect(unitConverter.meterToInch(1)).equals(39.3701)
+        })
+
+        it("1 meter should be 2.0254 Foot", () => {
+            expect(unitConverter.meterToFoot(1)).equals(3.2808)
+        })
     })
-
-
 })
