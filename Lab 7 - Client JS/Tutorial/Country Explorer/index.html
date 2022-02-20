@@ -12,15 +12,12 @@
     </header>
     <hr>
     <br>
-    <main id="main-content">
+    <main>
         <form action="#">
             <div class="form-group">
                 <lebel>Select a region &nbsp;</lebel>
-                <input type="text" id="region" name="region"
-                       placeholder="Select a region"
-                       list="regions"
-                       onchange="getCountries()"
-                >
+                <input type="text" id="region" name="region" placeholder="Select a region" list="regions"
+                       onchange="getCountries(this.value)">
                 <datalist id="regions" name="regions">
                     <option value="Africa"></option>
                     <option value="Asia"></option>
@@ -31,7 +28,7 @@
             </div>
             <div class="form-group">
                 <lebel>Select a country</lebel>
-                <select name="country" id="country">
+                <select name="country" id="country" onchange="loadCountryDetails(this.value)">
                 </select>
             </div>
         </form>
@@ -42,7 +39,6 @@
     </main>
 </div>
 
-
-<script src="js/index1.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>
