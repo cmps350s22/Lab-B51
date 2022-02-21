@@ -4,7 +4,10 @@ const regionSearchBar = document.querySelector('#region')
 const countryDropDown = document.querySelector('#country')
 const factsArea = document.querySelector('#facts-area')
 
-async function getCountries() {
+countryDropDown.addEventListener('onchange', loadCountryDetails)
+
+async function getCountries(e) {
+    alert('hello')
     const url = `${regionsBaseUrl}/${regionSearchBar.value}`
     const data = await fetch(url)
     const countries = await data.json()
@@ -13,13 +16,14 @@ async function getCountries() {
     await loadCountryDetails()
 }
 
-async function loadCountryDetails() {
+async function loadCountryDetails(e) {
     const url = `${countryBaseUrl}/${countryDropDown.value}`
     const data = await fetch(url)
     const country = await data.json()
     const factsHTML = generateFactsTable(country[0])
     factsArea.innerHTML = factsHTML
 }
+
 function generateFactsTable(country) {
     return `
      <h1 class="subtitle"><u>Facts about ${country.name.common}</u></h1>
