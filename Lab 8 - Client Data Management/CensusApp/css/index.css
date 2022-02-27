@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    background: url('../img/bg-img.png') right top no-repeat;
+    background-size: 40rem;
+}
+
+body {
+    height: 100%;
+    padding: 2rem 0;
+
+}
+
+.fa-trash {
+    color: #bc1212;
+}
+
+.fa-fa-edit {
+    color: blue;
+}
+
+.fa-fa-edit,
+.action-row,
+.page-header, td, th {
+    text-align: center;
+}
+
+h1,
+h2 {
+    margin: 10px;
+    font-weight: bolder;
+}
+
+.wrapper {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+
+
+}
+
+.form {
+    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    align-items: center;
+    width: 60%;
+    margin: 2rem 0;
+
+    padding: 4rem;
+}
+
+.buttons {
+    grid-column: 2/3;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+
+
+input, select {
+    height: 40px;
+    padding: 0.5rem;
+    border-radius: 15px;
+    font-weight: bolder;
+
+}
+.button {
+    border: none;
+    flex: 1;
+    transition: 0.5s;
+}
+.button:hover, .button:focus{
+    background-color: rgba(86, 36, 36, 0.8);
+    color: #fff;
+}
+.countries {
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+select {
+    flex: 0.5;
+}
+
+.countries thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.countries th,
+.countries td {
+    padding: 12px 15px;
+}
+
+.countries tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.countries tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.countries tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.countries tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+.group {
+    display: flex;
+}
+
