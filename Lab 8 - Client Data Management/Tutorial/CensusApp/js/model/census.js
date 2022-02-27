@@ -4,4 +4,5 @@ export class Census {
         this.country = country;
         this.population = population;
     }
+
 }

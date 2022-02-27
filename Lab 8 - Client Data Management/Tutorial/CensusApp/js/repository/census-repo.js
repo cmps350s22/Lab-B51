@@ -13,7 +13,8 @@ export class CensusRepo {
 
     updateCensus(updatedCensus) {
         try {
-            return db.collection('census').doc({id: census.id}).update(updatedCensus)
+            const id = updatedCensus.id
+            return db.collection('census').doc({id}).update(updatedCensus)
         } catch (e) {
             console.log(e)
         }
@@ -29,7 +30,7 @@ export class CensusRepo {
 
     getCensusById(id) {
         try {
-            return db.collection('census').doc({id}).get()
+            return db.collection('census').doc({id: id}).get()
         } catch (e) {
             console.log(e)
         }
