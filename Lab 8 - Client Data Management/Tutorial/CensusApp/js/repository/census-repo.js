@@ -1,6 +1,8 @@
+import {Census} from "../model/census.js";
+
 const db = new Localbase('census.db')
 
-class CensusRepo {
+export class CensusRepo {
     addCensus(census) {
         try {
             return db.collection('census').add(census)
