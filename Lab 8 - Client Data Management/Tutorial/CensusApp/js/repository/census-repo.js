@@ -1,5 +1,3 @@
-import {Census} from "../model/census.js";
-
 const db = new Localbase('census.db')
 
 export class CensusRepo {
@@ -30,7 +28,7 @@ export class CensusRepo {
 
     getCensusById(id) {
         try {
-            return db.collection('census').doc({id: id}).get()
+            return db.collection('census').doc({id}).get()
         } catch (e) {
             console.log(e)
         }
