@@ -11,8 +11,7 @@ export class CensusRepo {
 
     updateCensus(updatedCensus) {
         try {
-            const id = updatedCensus.id
-            return db.collection('census').doc({id}).update(updatedCensus)
+            return db.collection('census').doc({id: updatedCensus.id}).update(updatedCensus)
         } catch (e) {
             console.log(e)
         }
