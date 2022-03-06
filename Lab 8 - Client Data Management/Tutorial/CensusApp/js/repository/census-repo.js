@@ -1,68 +1,46 @@
-//initialize the database using localbase
-const db = new Localbase('census.db')
-
+const db = new Localbase('db')
 export class CensusRepo {
-
-    //add census
     addCensus(census) {
         try {
-            return db.collection('censuses').add(census)
+            return db.collection('census').add(census)
         } catch (e) {
             console.log(e)
         }
     }
 
-    //update census
-    updateCensus(census) {
+    updateCensus(updateCensus) {
         try {
-            return db.collection('censuses').doc({id: census.id}).update(census)
+            return db.collection('census').doc({id: updateCensus.id}).update(updateCensus)
         } catch (e) {
-            console.log(e)
+
         }
     }
 
-    //delete census
     deleteCensus(id) {
         try {
-            return db.collection('censuses').doc({id}).delete()
+            return db.collection('census').doc({id}).delete()
         } catch (e) {
-            console.log(e)
+
         }
     }
 
-    //get census by id
-    getCensus(id) {
+    getCensusById(id) {
         try {
-            return db.collection('censuses').doc({id}).get()
+            return db.collection('census').doc({id}).get()
         } catch (e) {
-            console.log(e)
+
         }
     }
 
-    //get all censuses
-    getCensuses(noOfRecords) {
+    getAllCensus(noOfRows) {
         try {
-            if(noOfRecords == 'ALl')
-                return db.collection('censuses').get()
-            return db.collection('censuses').limit(noOfRecords).get()
+            if (!noOfRows)
+                return db.collection('census').get()
+            return db.collection('census').limit(noOfRows).get()
         } catch (e) {
-            console.log(e)
+
         }
     }
+
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

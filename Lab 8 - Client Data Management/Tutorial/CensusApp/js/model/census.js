@@ -1,4 +1,4 @@
-export class Census {
+class Census {
     constructor(id, country, population) {
         this.id = id;
         this.country = country;

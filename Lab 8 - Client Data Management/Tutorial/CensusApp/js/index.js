@@ -1,94 +1,82 @@
-import {CensusRepo} from "./repository/census-repo.js";
+import {CensusRepo} from './repository/census-repo.js'
 
 const repo = new CensusRepo()
-let isUpdateMode = false
 
-window.onload = async () => {
-    await showCensusData();
-    window.handleDelete = handleDelete
-    window.handleUpdate = handleUpdate
+const countriesTable = document.querySelector('#countries')
+const noOfRowsDD = document.querySelector('#noOfRows')
+const form = document.querySelector('#form')
+const addBtn = document.querySelector('#add-btn')
+
+
+form.addEventListener('submit', addCensus)
+noOfRowsDD.addEventListener('change', showCensusList)
+
+window.onload = async ()=>{
+    await showCensusList();
+    window.deleteCensus = deleteCensus
+    window.updateCensus = updateCensus
 }
 
-const addBtn = document.querySelector('#add-btn')
-const noOfRows = document.querySelector('#noOfRows')
-const countriesTable = document.querySelector('#countries')
-const form = document.querySelector('#form')
-
-form.addEventListener('submit', handleSubmitCensus)
-noOfRows.addEventListener('change', showCensusData)
-
-async function handleSubmitCensus(e) {
-    e.preventDefault();
+async function addCensus(e) {
+    e.preventDefault()
     const census = formToObject(e.target)
 
-    if(isUpdateMode){
-        await repo.updateCensus(census)
-        addBtn.value = 'Add'
-        isUpdateMode = false
-    }
-    else{
+    if(addBtn.value == 'Add'){
         census.id = Date.now().toString()
-        await repo.addCensus(census)
+        const response = await repo.addCensus(census)
+    }else{
+        const response = await repo.updateCensus(census)
+        addBtn.value = 'Add'
     }
-
+    await showCensusList()
     form.reset()
-    await showCensusData();
 }
 
-function formToObject(form) {
-    const formData = new FormData(form)
-    const data = {}
+async function showCensusList() {
+    const noOfRows = parseInt(noOfRowsDD.value)
+    const allCensus = await repo.getAllCensus(noOfRows)
 
-    for (const [key, value] of formData) {
-        data[key] = value
-    }
-    return data
-}
+    const censusHTMLRows = allCensus.map(census => censusToHTMLRow(census)).join(' ')
 
-async function showCensusData() {
-    const censuses = await repo.getCensuses(parseInt(noOfRows.value));
-    const htmlRows = censuses.map(census => censusToHTMLRow(census)).join(' ')
     countriesTable.innerHTML = `
         <tr>
             <th>Country</th>
             <th>Population</th>
             <th>Action</th>
         </tr>
-        ${htmlRows}
+        ${censusHTMLRows} 
     `
 }
 
-function censusToHTMLRow(census) {
+function censusToHTMLRow(census){
     return `
         <tr>
             <td>${census.country}</td>
             <td>${census.population}</td>
             <td>
-                <i class="fa fa-edit" onclick="handleUpdate('${census.id}')">Edit</i>
-                <i class="fa fa-trash" onclick="handleDelete('${census.id}')">Delete</i>
+                <i class="fa fa-edit" onclick="updateCensus('${census.id}')">Edit</i>
+                <i class="fa fa-trash" onclick="deleteCensus('${census.id}')">Delete</i>
             </td>
         </tr>
-    
-    `;
+    `
 }
-async function handleUpdate(id){
-    const census = await repo.getCensus(id)
-    document.querySelector('#id').value = census.id
+async function updateCensus(id){
+    const census = await repo.getCensusById(id)
     document.querySelector('#country').value = census.country
     document.querySelector('#population').value = census.population
+    document.querySelector('#id').value = census.id
     addBtn.value = 'Update'
-    isUpdateMode = true
 }
-
-async function handleDelete(id) {
+async function deleteCensus(id) {
     await repo.deleteCensus(id)
-    await showCensusData()
+    await showCensusList()
 }
-
-
-
-
-
-
-
-
+function formToObject(form) {
+    const formData = new FormData(form)
+    console.log(formData)
+    const data = {}
+    for (const [key, value] of formData) {
+        data[key] = value
+    }
+    return data;
+}
