@@ -7,5 +7,11 @@ const router = express.Router()
 
 router.route('/api/accounts')
     .get(bankService.getAccounts)
+    .post(bankService.addAccount)
+    .put(bankService.updateAccount)
+
+router.route('/api/accounts/:acctNo')
+    .get(bankService.getAccount)
+    .delete(bankService.deleteAccount)
 
 export default router
