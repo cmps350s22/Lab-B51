@@ -6,7 +6,6 @@ app.get('/', (req, res)=>{
     res.send('Hello welcome to my server')
 })
 
-
 app.listen(port, ()=>{
     console.log(`Server listening on http://localhost:${port}`)
 })
