@@ -1,10 +1,11 @@
 import express from 'express'
+import BankService from "./services/bank-service.js";
+
+const bankService = new BankService()
 
 const router = express.Router()
 
-router.route('/api')
-    .get((req, res) => {
-        res.send('Welcome to my server api root node')
-    })
+router.route('/api/accounts')
+    .get(bankService.getAccounts)
 
 export default router
