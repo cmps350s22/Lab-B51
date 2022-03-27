@@ -1,4 +1,4 @@
-class BankAccount {
+export default class BankAccount {
     constructor(accountNo, acctType, balance) {
         this.accountNo = accountNo;
         this.acctType = acctType;
@@ -10,12 +10,8 @@ class BankAccount {
     }
 
     withdraw(amount) {
-
-        if (this.balance < amount) throw 'Not enough balance' ;
-
+        if (this.balance < amount) throw 'Not enough balance';
         this.balance -= amount;
-
-
     }
 
     toString() {
@@ -23,4 +19,3 @@ class BankAccount {
     }
 }
 
-module.exports = BankAccount;

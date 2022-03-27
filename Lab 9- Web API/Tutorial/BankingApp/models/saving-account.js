@@ -1,6 +1,6 @@
-let BankAccount = require('./bank-account')
+import BankAccount from './bank-account.js'
 
-class SavingAccount extends BankAccount {
+export default class SavingAccount extends BankAccount {
     constructor(accountNo, acctType, balance, minimumBalance) {
         super(accountNo, acctType, balance);
         this.minimumBalance = minimumBalance;
@@ -16,4 +16,3 @@ class SavingAccount extends BankAccount {
     }
 }
 
-module.exports = SavingAccount;
