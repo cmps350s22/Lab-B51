@@ -19,9 +19,9 @@ export default class AccountRepo {
         //This will add Account methods back to the deserialized account.
         for (const acct of accounts) {
             if (acct.acctType === "Saving")
-                Object.setPrototypeOf(acct, CurrentAccount.prototype);
-            else
                 Object.setPrototypeOf(acct, SavingAccount.prototype);
+            else
+                Object.setPrototypeOf(acct, CurrentAccount.prototype);
         }
         return accounts;
     }
@@ -39,6 +39,7 @@ export default class AccountRepo {
     async addAccount(account) {
         account.accountNo = Date.now();
         account.balance = parseInt(account.balance.toString());
+
         if (account.acctType === 'Saving')
             account.minimumBalance = 1000;
         else
