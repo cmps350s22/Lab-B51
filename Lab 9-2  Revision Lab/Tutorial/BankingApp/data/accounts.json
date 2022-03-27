@@ -1,0 +1,48 @@
+[
+  {
+    "accountNo": 1101,
+    "acctType": "Current",
+    "balance": 500
+  },
+  {
+    "accountNo": 2002,
+    "acctType": "Saving",
+    "balance": 8000,
+    "minimumBalance": 1000
+  },
+  {
+    "accountNo": 1102,
+    "acctType": "Current",
+    "balance": 500
+  },
+  {
+    "accountNo": 2003,
+    "acctType": "Saving",
+    "balance": 9000,
+    "minimumBalance": 1000
+  },
+  {
+    "accountNo": 2004,
+    "acctType": "Saving",
+    "balance": 400000,
+    "minimumBalance": 1000
+  },
+  {
+    "accountNo": 4444,
+    "acctType": "Saving",
+    "balance": 250000,
+    "minimumBalance": 1000
+  },
+  {
+    "accountNo": 4002,
+    "acctType": "Saving",
+    "balance": 18000,
+    "minimumBalance": 6000
+  },
+  {
+    "accountNo": 9002,
+    "acctType": "Saving",
+    "balance": 18000,
+    "minimumBalance": 6000
+  }
+]
