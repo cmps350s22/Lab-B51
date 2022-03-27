@@ -128,12 +128,12 @@ export default class AccountRepo {
         return await fs.writeJson(this.accountsFilePath, accounts);
     }
 
-    async addTransaction(transaction) {
+    async addTransaction(transaction, accountNo) {
         transaction.accountNo = parseInt(transaction.accountNo.toString());
         transaction.amount = parseInt(transaction.amount.toString());
         try {
             const accounts = await this.getAccounts();
-            const account = accounts.find(account => account.accountNo == transaction.accountNo);
+            const account = accounts.find(account => account.accountNo == accountNo);
             if (transaction.transType == 'Deposit') {
                 account.deposit(transaction.amount);
             } else {

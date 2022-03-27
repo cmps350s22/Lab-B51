@@ -40,4 +40,14 @@ export default class AccountService {
             res.send(e)
         }
     }
+
+    async addTransaction(req, res) {
+        try {
+            const accountNo = req.params.acctNo
+            const response = await accountRepo.addTransaction(req.body, accountNo)
+            res.json(response)
+        } catch (e) {
+            res.send(e)
+        }
+    }
 }

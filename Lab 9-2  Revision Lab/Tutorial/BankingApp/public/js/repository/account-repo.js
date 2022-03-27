@@ -30,11 +30,21 @@ class AccountRepo {
     }
 
     async updateAccount(account) {
-
+        const url = `/api/accounts/`
+        return await fetch(url, {
+            method: 'PUT',
+            headers: {'Content-Type' : 'application/json'},
+            body: JSON.stringify(account)
+        })
     }
 
     async addTrans(trans) {
-
+        const url = `/api/accounts/${trans.accountNo}/trans`
+        return await fetch(url, {
+            method: 'POST',
+            headers: {'Content-Type' : 'application/json'},
+            body: JSON.stringify(trans)
+        })
     }
 }
 

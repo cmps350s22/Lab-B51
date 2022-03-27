@@ -8,9 +8,13 @@ const router = express.Router();
 router.route('/accounts')
     .get(accountService.getAccounts)
     .post(accountService.addAccounts)
+    .post()
 
 router.route('/accounts/:acctNo')
     .get(accountService.getAccount)
     .delete(accountService.deleteAccount)
+
+router.route('/accounts/:acctNo/trans')
+    .post(accountService.addTransaction)
 export default router
 
