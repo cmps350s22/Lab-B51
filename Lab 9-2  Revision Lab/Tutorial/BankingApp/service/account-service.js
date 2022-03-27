@@ -21,4 +21,23 @@ export default class AccountService {
             res.send(e)
         }
     }
+
+    async deleteAccount(req, res) {
+        try {
+            const response = await accountRepo.deleteAccount(req.params.acctNo)
+            res.send(response)
+        }catch (e) {
+            res.send(e)
+        }
+    }
+
+    async addAccounts(req, res) {
+        try {
+            const account =  req.body
+            const response = await accountRepo.addAccount(account)
+            res.json(response)
+        }catch (e) {
+            res.send(e)
+        }
+    }
 }

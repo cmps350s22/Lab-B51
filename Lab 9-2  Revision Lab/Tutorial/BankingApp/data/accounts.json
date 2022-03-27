@@ -2,7 +2,7 @@
   {
     "accountNo": 1101,
     "acctType": "Current",
-    "balance": 500
+    "balance": 0
   },
   {
     "accountNo": 2002,
@@ -44,5 +44,11 @@
     "acctType": "Saving",
     "balance": 18000,
     "minimumBalance": 6000
+  },
+  {
+    "acctType": "Saving",
+    "balance": 99999999,
+    "minimumBalance": 1000,
+    "accountNo": 1648391715068
   }
 ]

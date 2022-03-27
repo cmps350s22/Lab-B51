@@ -3,13 +3,20 @@ const baseUrl = '/api/accounts'
 class AccountRepo {
     //returns all the accounts depending on the type the user selected
     async getAccounts(acctType) {
-        const url = `http://localhost:5000/api/accounts/?type=${acctType}`
+        const url = `/api/accounts/?type=${acctType}`
         const accounts = await fetch(url)
         return accounts.json()
     }
 
-    async deleteAccount(accountNo) {
+    async getAccount(accountNo) {
+        const url = `/api/accounts/${accountNo}`
+        const account = await fetch(url)
+        return account.json()
+    }
 
+    async deleteAccount(accountNo) {
+        const url = `/api/accounts/${accountNo}`
+        return await fetch(url, {method: 'DELETE'})
     }
 
     async addAccount(account) {
@@ -21,7 +28,7 @@ class AccountRepo {
     }
 
     async addTrans(trans) {
-        
+
     }
 }
 
