@@ -1,0 +1,20 @@
+[
+  {
+    "eid" : 10001,
+    "firstName" : "Abdulahi",
+    "lastName" : "Hassen",
+    "email" : "abdulahi@qu.edu.qa"
+  },
+  {
+    "eid" : 10001,
+    "firstName" : "Mohamed",
+    "lastName" : "Ahmed",
+    "email" : "mohamed@qu.edu.qa"
+  },
+  {
+    "eid" : 10001,
+    "firstName" : "Essa",
+    "lastName" : "Ali",
+    "email" : "essa@qu.edu.qa"
+  }
+]

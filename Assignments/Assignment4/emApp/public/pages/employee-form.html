@@ -1,0 +1,23 @@
+<form class="employee_form" id="form">
+    <fieldset>
+        <legend id="update-title">New Employee</legend>
+        <div class="grid employee-grid">
+            <input type="number" id="eid" name="eid" hidden="true">
+            <div class="form-group">
+                <label for="firstName">First Name</label><br>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label><br>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label><br>
+                <input type="text" id="email" name="email" required>
+            </div>
+    </fieldset>
+    <div class="grid">
+        <input class="btn submit-btn" type="submit" value="Save">
+        <input class="btn red-btn" type="button" id="back-btn" value="Back to employee list">
+    </div>
+</form>
