@@ -1,10 +1,9 @@
 import Account from '../model/account.js';
-import Transaction from '../model/account-trans.js'
-export default class AccountRepo {
+import Transaction from '../model/account-trans.js';
 
+export default class AccountRepo {
     //Get account from accounts.json file
     async getAccounts(acctType) {
-
         if (acctType && acctType != 'All')
             return Account.find({acctType})
         return Account.find();
@@ -12,48 +11,59 @@ export default class AccountRepo {
 
     //Get account by accountNo
     async getAccount(accountNo) {
-
+        return Account.findOne({_id: accountNo})
     }
 
     async addAccount(account) {
-        return await Account.create(account);
+        return await Account.create(account)
     }
 
     async deleteAccount(accountNo) {
-        try {
-            const accounts = await this.getAccounts();
-            const index = accounts.findIndex(acct => acct.accountNo == accountNo);
-            if (index >= 0) {
-                accounts.splice(index, 1);
-                return await this.saveAccounts(accounts);
-            }
-        } catch (err) {
-            throw err;
-        }
+        return Account.deleteOne({_id: accountNo})
     }
 
     async updateAccount(account) {
-        try {
-            const accounts = await this.getAccounts();
-            const index = accounts.findIndex(acct => acct.accountNo == account.accountNo);
-            if (index >= 0) {
-                accounts[index] = account;
-                return await this.saveAccounts(accounts);
-            }
+        return Account.findOneAndUpdate(account._id, account)
+    }
 
-            return -1;
+    async addTransaction(transaction) {
+        /*
+            {
+                transType : 'WithDraw/Deposit',
+                amount : 4000,
+                accountNo : 11123sdafadsf
+            }
+         */
+        transaction.amount = parseInt(transaction.amount.toString());
+        const account = this.getAccount(transaction.accountNo)
+
+        try {
+            if (transaction.transType == 'Deposit') {
+                account.balance += parseInt(transaction.amount.toString());
+            } else {
+                account.balance -= parseInt(transaction.amount.toString());
+            }
+            await account.save()
+            return await Transaction.create(transaction)
         } catch (err) {
             throw err;
         }
     }
 
     async sumBalance() {
-        try {
-            const accounts = await this.getAccounts();
-            return accounts.reduce((sum, account) => sum + account.balance, 0);
-        } catch (e) {
-            throw err;
-        }
+        return Account.aggregate([
+            {
+                $group: {
+                    _id: "$acctType",
+                    total: {
+                        $sum: "$balance"
+                    },
+                    numberOfAccounts: {
+                        $sum: 1
+                    }
+                }
+            }
+        ])
     }
 
     async chargeFees() {
@@ -88,26 +98,5 @@ export default class AccountRepo {
         }
     }
 
-    //Save accounts to account.json file
-    async saveAccounts(accounts) {
-        return await fs.writeJson(this.accountsFilePath, accounts);
-    }
-
-    async addTransaction(transaction) {
-        transaction.accountNo = parseInt(transaction.accountNo.toString());
-        transaction.amount = parseInt(transaction.amount.toString());
-        try {
-            const accounts = await this.getAccounts();
-            const account = accounts.find(account => account.accountNo == transaction.accountNo);
-            if (transaction.transType == 'Deposit') {
-                account.deposit(transaction.amount);
-            } else {
-                account.withdraw(transaction.amount);
-            }
-            await this.saveAccounts(accounts);
-        } catch (err) {
-            throw err;
-        }
-    }
 }
 
