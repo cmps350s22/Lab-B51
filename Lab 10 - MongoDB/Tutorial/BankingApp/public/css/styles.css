@@ -1,0 +1,233 @@
+/* Form styling */
+form {
+    display: grid;
+    padding: 1em;
+    background: #f9f9f9;
+    border:1px solid #c9e6ff;
+    margin: 1em auto 0 auto;
+    max-width: 500px;
+    padding: 1em;
+}
+form select,
+form input {
+    border:1px solid #c9e6ff;
+}
+
+form button {
+    border: none;
+    padding: 1em;
+    background: #0069ed;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+form button:hover,
+form button:focus {
+    background: #0053ba;
+}
+
+form button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+form button:active {
+    transform: scale(0.99);
+}
+
+label {
+    padding: 0.5em 0.5em 0.5em 0;
+}
+
+select,
+input {
+    padding: 0.7em;
+    margin-bottom: 0.5rem;
+}
+
+select:focus,
+input:focus {
+    outline: 2px solid royalblue;
+}
+
+@media (min-width: 700px) {
+    form {
+        grid-template-columns: auto 1fr;
+        grid-gap: 16px;
+    }
+
+    button {
+        grid-column: 2 / 3;
+        justify-self: center;
+    }
+
+    nav div {
+        flex-direction: row;
+    }
+    nav li:last-child {
+        border-bottom: 1px white solid;
+    }
+
+    nav ul {
+        display: flex;
+        flex: 1;
+        /*justify-content: flex-end;*/
+        align-items: center;
+    }
+
+    main {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Nav Bar styling */
+nav ul li:first-child {
+   margin-right: auto;
+}
+
+nav ul li
+{
+    display: inline;
+    padding:5px;
+    text-align:left;
+    font-size:1.5em;
+    font-weight:bold;
+}
+
+ul li a:hover {
+    color: dodgerblue;
+    text-decoration: overline;
+}
+
+nav ul li.selected a {
+    color: dodgerblue;
+    text-decoration: overline;
+}
+
+h3 {
+    text-align: center;
+}
+
+/* table styling */
+table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+tr:hover {background-color: #ddd;}
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #0069ed;
+    color: white;
+}
+
+/*
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+nav {
+    background: aqua;
+
+}
+nav div{
+    display: flex;
+    flex-direction: column;
+}
+nav ul{
+    align-self: center;
+}
+nav img {
+    width: 200px;
+    height: 60px;
+}
+
+nav li {
+    list-style: none;
+    text-decoration: none;
+    margin: 10px;
+    font-family: "Helvetica";
+    letter-spacing: 2px;
+    border-bottom: 1px white solid;
+}
+
+.drop-down{
+    display: flex;
+}
+.drop-down select{
+    height: 40px;
+    font-size: large;
+}
+
+#drop-down{
+    flex: 1;
+}
+
+#accounts {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+.form-group {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+#accounts td, #accounts th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#accounts tr:nth-child(even){background-color: #f2f2f2;}
+
+#accounts tr:hover {background-color: #ddd;}
+
+#accounts th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+.fa-trash, fa-pen{
+    color: red;
+    font-size: 1.5em;
+    background-color: rgba(242, 242, 242, 0.2);
+}
+label , input , select{
+    font-size: large;
+
+    margin: 10px;
+}
+
+.button {
+    background-color: #4CAF50; !* Green *!
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.submit{
+    background: #288eff;
+}
+@media (min-width: 900px) {
+
+
+}*/
