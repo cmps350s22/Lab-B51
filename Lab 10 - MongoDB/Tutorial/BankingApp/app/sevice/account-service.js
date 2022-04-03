@@ -4,7 +4,7 @@ const accountRepo = new AccountRepo()
 class AccountService {
     async getAccounts(req, res) {
         try {
-            const accounts = await accountRepo.getAccounts(req.query)
+            const accounts = await accountRepo.getAccounts(req.query.type )
             res.status(200).json(accounts)
         } catch (e) {
             res.status(500).json(e)

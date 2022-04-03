@@ -24,7 +24,7 @@ accountSchema.virtual('acctNo').get(function () {
     return this._id
 })
 accountSchema.virtual('profit').get(function () {
-    if (this.type == 'saving')
+    if (this.acctType == 'Saving')
         return this.balance * 0.05
     return 0
 })

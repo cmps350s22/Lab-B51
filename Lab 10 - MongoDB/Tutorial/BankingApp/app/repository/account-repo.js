@@ -3,10 +3,11 @@ import Transaction from '../model/account-trans.js';
 
 export default class AccountRepo {
     //Get account from accounts.json file
+
     async getAccounts(acctType) {
         if (acctType && acctType != 'All')
-            return Account.find({acctType})
-        return Account.find();
+            return  Account.find({acctType})
+        return  Account.find();
     }
 
     //Get account by accountNo
@@ -27,15 +28,10 @@ export default class AccountRepo {
     }
 
     async addTransaction(transaction) {
-        /*
-            {
-                transType : 'WithDraw/Deposit',
-                amount : 4000,
-                accountNo : 11123sdafadsf
-            }
-         */
+        console.log(transaction)
         transaction.amount = parseInt(transaction.amount.toString());
-        const account = this.getAccount(transaction.accountNo)
+
+        const account = await this.getAccount(transaction. acctNo)
 
         try {
             if (transaction.transType == 'Deposit') {
@@ -43,6 +39,7 @@ export default class AccountRepo {
             } else {
                 account.balance -= parseInt(transaction.amount.toString());
             }
+            console.log(account)
             await account.save()
             return await Transaction.create(transaction)
         } catch (err) {
