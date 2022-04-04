@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const transactionSchema = new Schema({
-    accountNo: {
+    acctNo: {
         type: Schema.Types.ObjectId,
         ref: 'Account',
         required: [true, 'accountNo is a required field']

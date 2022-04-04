@@ -28,4 +28,8 @@ accountSchema.virtual('profit').get(function () {
         return this.balance * 0.05
     return 0
 })
+accountSchema.virtual('minBalance').get(function () {
+    if (this.acctType == 'Saving')
+        return 1000
+})
 export default mongoose.model('Account', accountSchema)

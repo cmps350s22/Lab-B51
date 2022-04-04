@@ -4,14 +4,17 @@ import Transaction from '../model/account-trans.js';
 export default class AccountRepo {
     //Get account from accounts.json file
 
-    async getAccounts(acctType) {
+    getAccounts(acctType) {
+        let accounts;
         if (acctType && acctType != 'All')
-            return  Account.find({acctType})
-        return  Account.find();
+            accounts = Account.find({acctType})
+        else
+            accounts = Account.find();
+        return accounts
     }
 
     //Get account by accountNo
-    async getAccount(accountNo) {
+    getAccount(accountNo) {
         return Account.findOne({_id: accountNo})
     }
 
@@ -19,11 +22,11 @@ export default class AccountRepo {
         return await Account.create(account)
     }
 
-    async deleteAccount(accountNo) {
+    deleteAccount(accountNo) {
         return Account.deleteOne({_id: accountNo})
     }
 
-    async updateAccount(account) {
+    updateAccount(account) {
         return Account.findOneAndUpdate(account._id, account)
     }
 
@@ -31,7 +34,7 @@ export default class AccountRepo {
         console.log(transaction)
         transaction.amount = parseInt(transaction.amount.toString());
 
-        const account = await this.getAccount(transaction. acctNo)
+        const account = await this.getAccount(transaction.acctNo)
 
         try {
             if (transaction.transType == 'Deposit') {
@@ -47,6 +50,9 @@ export default class AccountRepo {
         }
     }
 
+    async getTransactions() {
+        return Transaction.find()
+    }
     async sumBalance() {
         return Account.aggregate([
             {

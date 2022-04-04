@@ -21,6 +21,9 @@ router.route('/accounts/:acctNo')
 router.route('/accounts/:acctNo/trans')
     .post(accountService.addTransaction)
 
+router.route('/transactions')
+    .get(accountService.getTransactions)
+
 
 
 
