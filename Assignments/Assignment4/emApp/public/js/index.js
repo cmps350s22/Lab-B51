@@ -1,5 +1,6 @@
 import employeeRepo from '../js/repository/employee-repo.js'
 
+
 window.onload = async () => {
     window.deleteEmployee = deleteEmployee
     window.submitEmployeeForm = submitEmployeeForm
@@ -9,7 +10,6 @@ window.onload = async () => {
 }
 
 const appContainer = document.querySelector('#container');
-
 const deleteEmployeesBtn = document.querySelector('#delete-employees-btn');
 const addEmployeeLink = document.querySelector('#add-employee-link');
 const employeesTable = document.querySelector('#employees-table');
@@ -25,7 +25,7 @@ let employeeToBeUpdated = null;
 
 async function loadEmployeesTable() {
     const employees = await employeeRepo.getEmployees()
-    const employeeToHTMl = employees.map(p => p.toHTMLRow()).join('')
+    const employeeToHTMl = employees.map(p => toHTMLRow(p)).join('')
     if (employeeToHTMl.length > 0)
         employeeTableBody.innerHTML = employeeToHTMl
     else
@@ -35,7 +35,7 @@ async function loadEmployeesTable() {
 
 async function showEmployeeDetail(eid) {
     const employee = await employeeRepo.getEmployee(eid)
-    appContainer.innerHTML = employee.toCard()
+    appContainer.innerHTML = toCard(employee)
 }
 
 async function deleteEmployee(eid) {
@@ -112,4 +112,35 @@ function formToObject(formElement) {
 async function loadPage(pageName) {
     const pageContent = await fetch(`../pages/${pageName}`)
     appContainer.innerHTML = await pageContent.text()
+}
+
+function toHTMLRow(p) {
+    return ` <tr>
+                <td>${p.firstName}</td>
+                <td>${p.lastName}</td>
+                <td>${p.email}</td>
+                <td class="actions">
+                    <button class="btn small-btn read" onclick="readEmployee(${p.eid})">Detail</button> 
+                    <button class="btn small-btn" onclick="editEmployee(${p.eid})">Edit</button> 
+                    <button class="btn small-btn red-btn" onclick="deleteEmployee(${p.eid})">Delete</button>
+                </td>
+         </tr>`
+}
+
+function toCard(p) {
+    return `
+            <div class="card">
+                <h1>Employee Information</h1>
+                <div>
+                    <p>Employee Id : ${p.eid}</p>
+                    <p>First Name : ${p.firstName}</p>
+                    <p>Last Name : ${p.lastName}</p>
+                    <p>Email : ${p.email}</p>
+                </div>
+                <div>
+                    <button class="btn small-btn" onclick="editEmployee(${p.eid})">Edit</button> 
+                    <button class="btn small-btn red-btn" onclick="deleteEmployee(${p.eid})">Delete</button>
+                </div>
+            </div>   
+        `
 }
