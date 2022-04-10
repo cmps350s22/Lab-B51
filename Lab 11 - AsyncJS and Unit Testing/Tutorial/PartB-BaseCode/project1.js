@@ -9,15 +9,21 @@ import fs from 'fs'
 2.Take care of error handling in the callback function
 */
 
-fs.readFile('data/student.json', (err, data) => {
-    if (err)
-        console.log('unable to open the file or there is nothing to display')
-    else{
+function readMyFile(filename, cb) {
+    return fs.readFile(filename, (err, data) => {
+        if (!err)
+            cb(null, data)
+        else
+            cb(err, null)
+    });
+}
+
+readMyFile('data/student.json', (err, data) => {
+    if (!err)
         console.log(JSON.parse(data))
-
-    }
-
-});
+    else
+        console.log(err)
+})
 
 
 console.log('the remaining code of our program')
