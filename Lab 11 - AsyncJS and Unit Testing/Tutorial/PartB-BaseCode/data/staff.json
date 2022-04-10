@@ -1,0 +1,116 @@
+[
+  {
+    "staffNo": 1,
+    "username": "adviser1",
+    "firstname": "Jaber ibn",
+    "lastname": "Hayyan",
+    "password": "password",
+    "type": "Adviser",
+    "program": ["AUP", "CVE", "CS", "CE"]
+  },
+  {
+    "staffNo": 2,
+    "username": "adviser2",
+    "firstname": "Elbert",
+    "lastname": "Inestine",
+    "password": "password",
+    "type": "Adviser",
+    "program": ["EE", "CHE", "ME", "ISE"]
+  },
+  {
+    "staffNo": 3,
+    "username": "aup",
+    "firstname": "Mohammad",
+    "lastname": "Alrazi",
+    "password": "password",
+    "type": "Coordinator",
+    "program": "AUP"
+  },
+  {
+    "staffNo": 4,
+    "username": "che",
+    "firstname": "Mohd",
+    "lastname": "Al-Khwarizmi",
+    "password": "password",
+    "type": "Coordinator",
+    "program": "CHE"
+  },
+  {
+    "staffNo": 5,
+    "username": "cve",
+    "firstname": "Mohd",
+    "lastname": "Zuwail",
+    "password": "password",
+    "type": "Coordinator",
+    "program": "CVE"
+  },
+  {
+    "staffNo": 6,
+    "username": "cs",
+    "firstname": "Alhasan",
+    "lastname": "Ibn Al Haytham",
+    "password": "password",
+    "type": "Coordinator",
+    "program": "CS"
+  },
+  {
+    "staffNo": 7,
+    "username": "ce",
+    "firstname": "Elon",
+    "lastname": "Musk",
+    "password": "password",
+    "type": "Coordinator",
+    "program": "CE"
+  },
+  {
+    "staffNo": 8,
+    "username": "ee",
+    "firstname": "Steve",
+    "lastname": "Jobs",
+    "password": "password",
+    "type": "Coordinator",
+    "program": "EE"
+  },
+  {
+    "staffNo": 9,
+    "username": "me",
+    "firstname": "Robert",
+    "lastname": "Rutherford",
+    "password": "password",
+    "type": "Coordinator",
+    "program": "ME"
+  },
+  {
+    "staffNo": 10,
+    "username": "ise",
+    "firstname": "Lio",
+    "lastname": "Messi",
+    "password": "password",
+    "type": "Coordinator",
+    "program": "ISE"
+  },
+  {
+    "staffNo": 12,
+    "username": "faculty1",
+    "firstname": "Zeyad",
+    "lastname": "Ali",
+    "password": "password",
+    "type": "Faculty"
+  },
+  {
+    "staffNo": 21,
+    "username": "faculty2",
+    "firstname": "Aws",
+    "lastname": "Altaei",
+    "password": "password",
+    "type": "Faculty"
+  },
+  {
+    "staffNo": 33,
+    "username": "faculty3",
+    "firstname": "Saleh",
+    "lastname": "Alhazbi",
+    "password": "password",
+    "type": "Faculty"
+  }
+]
