@@ -18,17 +18,23 @@ function getCourses(cb) {
             fs.readFile('data/staff.json', (err, data) => {
                 if (!err) {
                     const staffs = JSON.parse(data)
-                    for (const course of courses) {
-                        const {
-                            firstname: firstname,
-                            lastname
-                        } = staffs.find(staff => staff.staffNo == course.instructorId)
-                        course.instructor = `${firstname} ${lastname}`
-                        // delete course.instructorId
-                    }
-                    fs.readFile('data/staff.json', (err, data) => {
+                    fs.readFile('data/student.json', (err, data) => {
                         if (!err) {
-
+                            const students = JSON.parse(data)
+                            for (const course of courses) {
+                                const {
+                                    firstname: firstname,
+                                    lastname
+                                } = staffs.find(staff => staff.staffNo == course.instructorId)
+                                course.instructor = `${firstname} ${lastname}`
+                                course.students = []
+                                for (const student of students) {
+                                    if (student.courseIds.includes(course.crn))
+                                        course.students.push(student.firstname)
+                                }
+                                // delete course.instructorId
+                            }
+                            cb(null, courses)
                         } else {
                             cb(err, null)
                         }
