@@ -1,0 +1,236 @@
+:root {
+    --primary-color: #15467a;
+    --dark-color: #002240;
+    --success-color: #5cb85c;
+    --error-color: #a0211e;
+    --bink-color: #c37979;
+    --brown-color: #352323;
+    --gray-color: #a9a4a4;
+    --light-bink-color: #f8d1d1;
+    --light-color: #fff2f2;
+}
+
+* {
+    box-sizing: border-box; /* padding and margin without changing the width */
+    padding: 0;
+    margin: 0;
+
+}
+
+body {
+    width: 80%;
+    margin: 0 auto
+}
+
+h1, h2 {
+    margin: 15px 0;
+}
+
+header {
+    height: 60px;
+    background-color: var(--bink-color);
+    color: white;
+    display: flex;
+    align-items: stretch;
+    font-size: 2rem;
+}
+
+.logo {
+    background-color: var(--dark-color);
+    color: white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+}
+
+header a:hover, .active {
+    text-decoration: none;
+    background-color: var(--brown-color);
+}
+
+.nav-bar {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-bar > a {
+    font-size: 1.5rem;
+    flex: 1;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: #002240 2px dotted;
+
+}
+
+.employee-grid {
+    grid-template-columns: 1fr 4fr;
+}
+
+.employees-table {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+.name {
+    background-color: var(--brown-color);
+    color: white;
+    height: 100%;
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.employees-btn {
+    background-color: var(--bink-color);
+    height: 100%;
+    font-size: 2rem;
+    color: white;
+    padding: 1rem;
+}
+
+.add-employees-btn {
+    background-color: var(--gray-color);
+    height: 100%;
+    color: white;
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+
+/*************************************************** Table Styles ***************************************************/
+
+.employees-table td, .employees-table th {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+}
+
+.employees-table thead tr {
+    background-color: var(--light-bink-color);
+    color: var(--brown-color);
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+.employees-table th td {
+    padding: 12px 15px;
+    color: #1c3fa8;
+}
+
+.employees-table tbody tr:nth-of-type(even) {
+    background-color: var(--light-color);
+}
+
+/*************************************************** Form Styles ***************************************************/
+/* All Styles Related to forms */
+.employee_form {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 2rem;
+}
+
+.form-group {
+    margin: 0 20px;
+    padding: 3px;
+    font-size: 1.2rem;
+}
+
+.form-group input, .filed select, .filed textarea {
+    font-size: 16px;
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--gray-color);
+}
+
+select#did {
+    width: 100%;
+    height: 2rem;
+}
+
+.form-group textarea {
+    /* make the textarea filed higher */
+    height: 140px;
+}
+
+.textarea_filed {
+    /* make the textarea_filed div take whole row */
+    grid-column: 1/-1;
+}
+
+.radio_filed {
+    margin: 0 20px;
+    padding: 3px;
+    font-size: 16px;
+}
+
+fieldset {
+    margin: 2rem 0;
+}
+
+legend {
+    margin-left: 15px;
+    font-size: 1.5rem;
+    padding: 0 5px;
+}
+
+/* override only one attribute form mainStyles grid class*/
+form .grid {
+    margin: 20px 0;
+}
+
+.btn {
+    display: inline-block;
+    cursor: pointer;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.8rem;
+    font-size: 1.3rem;
+
+}
+
+.small-btn {
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.red-btn {
+    background-color: var(--error-color);
+}
+
+.btn:hover {
+    transform: scale(0.98);
+}
+
+.read {
+    background-color: #3a85d6;
+}
+
+.card {
+    margin: 20px;
+    padding: 20px;
+    width: 50%;
+    min-height: 200px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s;
+}
+
+.card:hover {
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+    transform: scale(1.01);
+}

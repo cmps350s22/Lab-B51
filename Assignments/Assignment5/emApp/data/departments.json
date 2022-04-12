@@ -1,0 +1,27 @@
+[
+  {
+    "did": 101,
+    "name": "ITS",
+    "location": "H04"
+  },
+  {
+    "did": 102,
+    "name": "Administration",
+    "location": "B01"
+  },
+  {
+    "did": 103,
+    "name": "HR",
+    "location": "C08"
+  },
+  {
+    "did": 104,
+    "name": "Health and safety",
+    "location": "C06"
+  },
+  {
+    "did": 105,
+    "name": "Faculty",
+    "location": "C03"
+  }
+]

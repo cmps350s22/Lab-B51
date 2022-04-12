@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management App</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo">Employee Management System</a>
+    <nav class="nav-bar">
+        <a href="index.html" id="list-employees-link">Employees</a>
+        <a href="#" id="add-employee-link">Add Employee</a>
+    </nav>
+</header>
+
+<main>
+        <div class="container" id="container">
+            <div>
+                <h2>Employees List</h2>
+                <input class="btn small-btn" type="button" id="create-employee-btn" value="Create New Employee">
+                <hr>
+                <div>
+                    <table class="employees-table" id="employees-table">
+                        <thead class="employees-table-head">
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Department</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody class="employees-table-body"></tbody>
+                    </table>
+                </div>
+            </div>
+            <input class="btn small-btn red-btn" type="button" id="delete-employees-btn" value="Delete All Employees">
+        </div>
+
+</main>
+
+<script src="https://unpkg.com/localbase/dist/localbase.dev.js"></script>
+<script src="js/index.js" type="module"></script>
+</body>
+</html>

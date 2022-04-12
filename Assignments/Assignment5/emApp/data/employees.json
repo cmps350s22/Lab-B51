@@ -1,0 +1,44 @@
+[
+  {
+    "eid": 324234234,
+    "firstName": "Mohamed",
+    "lastName": "Ahmed",
+    "email": "mohamed@qu.edu.qa",
+    "did": 102
+  },
+  {
+    "eid": 23423432,
+    "firstName": "Essa",
+    "lastName": "Ali",
+    "email": "essaUpdatedEmail@qu.edu.qa",
+    "did": 103
+  },
+  {
+    "eid": 1649454019810,
+    "firstName": "Mohamed",
+    "lastName": "Abdou",
+    "email": "abdou@gmail.com",
+    "did": 104
+  },
+  {
+    "eid": 1649715536980,
+    "firstName": "Abdulahi",
+    "lastName": "Mohamed",
+    "email": "abdala.baaji@gmail.com",
+    "did": "104"
+  },
+  {
+    "eid": 3444445,
+    "firstName": "Ali",
+    "lastName": "Essa",
+    "email": "abdala.baaji@gmail.com",
+    "did": "104"
+  },
+  {
+    "eid": 3444445,
+    "firstName": "Jonas",
+    "lastName": "Jas",
+    "email": "abdala.baaji@gmail.com",
+    "did": "101"
+  }
+]
