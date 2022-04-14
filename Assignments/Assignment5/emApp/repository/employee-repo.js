@@ -31,7 +31,7 @@ export default class EmployeeRepo {
         const index = employees.findIndex(e => e.eid == eid);
         if (index >= 0) {
             //even if they just send one value [eg. name], then it will only update that value and keep the rest
-            employees[index] = [...employees[index], ...updatedEmployee];
+            employees[index] = {...employees[index], ...updatedEmployee};
             await this.saveEmployees(employees)
             return `successfully updated employee with eid ${eid}`
         } else
