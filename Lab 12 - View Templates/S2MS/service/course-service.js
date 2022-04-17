@@ -5,7 +5,6 @@ export default class CourseService {
     constructor() {
 
     }
-
     async getPrograms(req, res) {
         try {
             const programs = await courseRepository.getPrograms();

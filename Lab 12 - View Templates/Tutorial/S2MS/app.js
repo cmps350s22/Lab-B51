@@ -1,12 +1,16 @@
 import express from 'express'
 import router from './router.js'
 import morgan from 'morgan'
-
+import {engine} from "express-handlebars";
 //port number
 const port = 5000
 const app = express()
 
 //two types [dynamic , static]
+//handle bars configuration
+app.engine("hbs", engine({ extname: "hbs", defaultLayout: "main", layoutsDir: "views/layouts/"}))
+app.set('view engine', 'hbs')
+app.set('views', 'views')
 
 app.use(express.static('views'))
 
