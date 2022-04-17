@@ -1,1 +1,5 @@
-<h1>This is the courses page</h1>
+<select name="" id="">
+    {{#each programs as |p|}}
+        <option value="{{p.code}}">{{p.name}}</option>
+    {{/each}}
+</select>
