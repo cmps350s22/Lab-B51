@@ -1,5 +1,8 @@
-<select name="" id="" >
+<select name="" id="" onchange="getCourses(this.value)">
     {{#each programs as |p|}}
         <option value="{{p.code}}">{{p.name}}</option>
     {{/each}}
 </select>
+<div id="courses-area">
+
+</div>
