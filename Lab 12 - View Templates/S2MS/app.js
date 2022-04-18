@@ -19,7 +19,6 @@ app.listen(port, () => {
     console.log(`Server started @http://localhost:${port}`)
 })
 
-
 //a middleware
 ///import {engine} from "express-handlebars"
 // app.engine("hbs",
