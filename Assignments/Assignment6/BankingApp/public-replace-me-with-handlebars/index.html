@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Banking App</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<nav>
+    <ul>
+        <li>Alpha Bank</li>
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+        <li onclick="loadPage('add-acct.html')">
+            <a href="#">Add Account</a>
+        </li>
+        <li onclick="loadPage('acct-trans.html')">
+            <a href="#">Add Transaction</a>
+        </li>
+    </ul>
+</nav>
+
+<main id="main">
+    <label for="acctType">
+        Account Type
+    </label>
+    <select id="acctType" onchange="handleLoadAccounts(this.value)">
+        <option value="All">All</option>
+        <option value="Saving">Saving</option>
+        <option value="Current">Current</option>
+    </select>
+    <div id="accounts-table"></div>
+</main>
+<script src="js/index.js" type="module"></script>
+</body>
+</html>
