@@ -32,13 +32,13 @@ async function handleLoadAccounts(acctType) {
 
 function accountToHTMLRow(acct) {
     return `
-        <tr id="row-${acct.acctNo}">
-            <td>${acct.acctNo}</td>
+        <tr id="row-${acct._id}">
+            <td>${acct._id}</td>
             <td>${acct.acctType}</td>
             <td>${acct.balance}</td>
             <td>
                 ${acct.balance <= 0 ?
-        `<button onclick="handleDeleteAccount('${acct.acctNo}')">
+        `<button onclick="handleDeleteAccount('${acct._id}')">
                             <i class="fas fa-trash"></i>
                         </button>`
         : ''
@@ -49,7 +49,6 @@ function accountToHTMLRow(acct) {
 }
 
 async function handleDeleteAccount(acctNo) {
-    console.log(acctNo)
     try {
         const confirmed = confirm("Are you sure you want to delete this account?");
         if (confirmed) {
@@ -88,8 +87,8 @@ async function fillAccountsDD() {
 }
 
 function accountToHtmlOption(account) {
-    return `<option value='${account.acctNo}'>
-                #${account.acctNo} - ${account.acctType} (QR ${account.balance})
+    return `<option value='${account._id}'>
+                #${account._id} - ${account.acctType} (QR ${account.balance})
              </option>`;
 }
 

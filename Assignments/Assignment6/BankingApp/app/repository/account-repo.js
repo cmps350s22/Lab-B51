@@ -6,8 +6,8 @@ export default class AccountRepo {
     //Get account from accounts.json file
     getAccounts(acctType) {
         if (acctType && acctType != 'All')
-            return Account.find({acctType})
-        return Account.find()
+            return Account.find({acctType}).lean()
+        return Account.find().lean()
     }
 
     //Get account by accountNo
@@ -40,7 +40,7 @@ export default class AccountRepo {
     }
 
     getTransactions() {
-        return Transaction.find().populate('acctNo')
+        return Transaction.find().populate('acctNo').lean()
     }
 
     getStats() {

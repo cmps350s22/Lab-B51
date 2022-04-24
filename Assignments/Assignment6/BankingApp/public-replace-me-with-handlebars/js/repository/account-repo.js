@@ -6,7 +6,10 @@ class AccountRepo {
         let url = '/api/accounts/';
         url = `${url}?type=${acctType}`;
         const response = await fetch(url);
-        return response.json();
+
+        const accounts =  await response.json();
+        console.log(accounts)
+        return accounts
     }
 
     async deleteAccount(accountNo) {
