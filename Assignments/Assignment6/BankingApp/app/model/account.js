@@ -32,6 +32,7 @@ accountSchema.virtual('acctNo').get(function () {
     return this._id
 })
 
+
 export default mongoose.model('Account', accountSchema)
 
 
